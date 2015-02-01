@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys
+import ConfigParser
 import datetime
 import logging
-import signal
 import os
-import ConfigParser
+import signal
 import socket
+import sys
+import traceback
+
 
 def ctrlc_handler(signum,frame):
     msg = 'Sript interrotto manualmente dall''utente (CTRL-C)'
@@ -23,6 +25,12 @@ def myencode(text):
             pass
         else:
             return out
+
+def exception_logger(ex, ex_traceback=None):
+    if ex_traceback is None:
+        ex_traceback = ex.__traceback__
+    tb_lines = [line.strip().replace('\n','') for line in traceback.format_exception(ex.__class__, ex, ex_traceback)]
+    return ': '.join(tb_lines[1:])
 
 ##############################################################
 # MAIN
@@ -58,6 +66,13 @@ def main():
 
     for x in conf:
         print "%s : %s"%(x, conf[x])
+
+    try:
+        x = 3/0
+    except Exception as ex:
+        _, _, ex_traceback = sys.exc_info()
+        logging.error(exception_logger(ex, ex_traceback))
+        sys.exit() # Only if critical
 
 if __name__ == '__main__':
     main()

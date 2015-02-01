@@ -1,0 +1,5 @@
+2015/02/01 08:15:00:INFO:Info message
+2015/02/01 08:15:00:WARNING:Warning message
+2015/02/01 08:15:00:ERROR:Erro message
+2015/02/01 08:15:00:CRITICAL:Critical message
+2015/02/01 08:15:00:ERROR:File "/Users/gianx/Dropbox/Progetti/__Python/pyBoilerplate/pyBoilerplate.py", line 71, in main    x = 3/0: ZeroDivisionError: integer division or modulo by zero
