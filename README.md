@@ -28,3 +28,5 @@ It uses standar Python [ConfigParser](https://docs.python.org/2/library/configpa
 Section are parsed but all the given configuration values are inserted in the same dictionary without any hierrarchy (basically sections are ignored).   
 In this repository you'll find an example of a simple configuration file (__pyBoilerplate.conf__).
 
+### Exception management
+Snippet to handle and log exceptions
