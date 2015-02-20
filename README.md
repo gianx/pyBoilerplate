@@ -8,6 +8,8 @@ It uses only standard library modules and it provides:
 - Simple text encoding;
 - Simple logging;
 - Simple configuration management;
+- Tool for creating directory structure;
+- Improved error management;
 
 ### CTRL+C management
 If CTRL+C in pressed, the script calls the function __ctrlc_handler__
